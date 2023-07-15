@@ -1,0 +1,539 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.raghib.selenium</groupId>
+	<artifactId>JavaSeleniumTestngCucumberMaven</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>JavaSeleniumTestngCucumberMaven</name>
+	<properties>
+		<maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<java.version>17</java.version>
+		<lombok-version>1.18.24</lombok-version>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<selenium-java-version>4.9.1</selenium-java-version>
+		<selenium-api-version>4.9.1</selenium-api-version>
+		<selenium-remote-driver-version>4.9.1</selenium-remote-driver-version>
+		<selenium-chrome-driver-version>4.9.1</selenium-chrome-driver-version>
+		<selenium-support-version>4.9.1</selenium-support-version>
+		<selenium-firefox-driver-version>4.9.1</selenium-firefox-driver-version>
+		<selenium-server-version>3.141.59</selenium-server-version>
+		<htmlunit-driver-version>4.9.1</htmlunit-driver-version>
+		<selenium-htmlunit-driver-version>2.51.0</selenium-htmlunit-driver-version>
+		<selenium-java-client-driver-version>1.0.2</selenium-java-client-driver-version>
+		<selenium-java-testng-helper-version>1.0.1</selenium-java-testng-helper-version>
+		<selenium-ie-driver-version>4.9.1</selenium-ie-driver-version>
+		<selenium-safari-driver-version>4.9.1</selenium-safari-driver-version>
+		<selenium-edge-driver-version>4.9.1</selenium-edge-driver-version>
+		<selenium-json-version>4.9.1</selenium-json-version>
+		<selenium-opera-driver-version>4.4.0</selenium-opera-driver-version>
+		<selenium-common-version>2.0b1</selenium-common-version>
+		<selenium-http-version>4.9.1</selenium-http-version>
+		<selenium-remote-control-version>2.0rc2</selenium-remote-control-version>
+		<selenium-devtools-version>4.0.0-rc-1</selenium-devtools-version>
+		<selenium-http-jdk-client-version>4.9.1</selenium-http-jdk-client-version>
+		<selenium-grid-version>4.9.1</selenium-grid-version>
+		<selenium-grid-version-version>4.9.1</selenium-grid-version-version>
+		<selenium-chromium-driver-version>4.9.1</selenium-chromium-driver-version>
+		<selenium-grid-core-version>1.0.5</selenium-grid-core-version>
+		<selenium-grid-hub-version>1.0.5</selenium-grid-hub-version>
+		<selenium-grid-webserver-version>1.0.5</selenium-grid-webserver-version>
+		<selenium-grid-remote-control-version>1.0.5</selenium-grid-remote-control-version>
+		<selenium-grid-tools-version>1.0.5</selenium-grid-tools-version>
+		<selenium-grid-demo-version>1.0.4</selenium-grid-demo-version>
+		<selenium-grid-agent-version>1.0.5</selenium-grid-agent-version>
+		<fluent-selenium-version>1.23</fluent-selenium-version>
+		<selenium-manager-version>4.9.1</selenium-manager-version>
+		<selenium-remote-client-version>2.0b1</selenium-remote-client-version>
+		<selenium-core-version>1.0.1</selenium-core-version>
+		<lift-version>4.9.1</lift-version>
+		<selenium-edgehtml-driver-version>4.0.0-alpha-7</selenium-edgehtml-driver-version>
+		<htmlunit3-driver-version>4.9.1</htmlunit3-driver-version>
+		<selenium-firefox-xpi-driver-version>4.1.2</selenium-firefox-xpi-driver-version>
+		<selenium-session-map-redis-version>4.9.1</selenium-session-map-redis-version>
+		<selenium-session-map-jdbc-version>4.9.1</selenium-session-map-jdbc-version>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<testng-version>7.8.0</testng-version>
+		<mockito-testng-version>0.5.0</mockito-testng-version>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<cucumber-java-version>7.12.1</cucumber-java-version>
+		<cucumber-junit-version>7.12.1</cucumber-junit-version>
+		<cucumber-core-version>7.12.1</cucumber-core-version>
+		<cucumber-java8-version>7.12.1</cucumber-java8-version>
+		<cucumber-picocontainer-version>7.12.1</cucumber-picocontainer-version>
+		<cucumber-testng-version>7.12.1</cucumber-testng-version>
+		<cucumber-reporting-version>5.7.6</cucumber-reporting-version>
+		<cucumber-guice-version>7.12.1</cucumber-guice-version>
+		<cucumber-junit-platform-engine-version>7.12.1</cucumber-junit-platform-engine-version>
+		<cucumber-gherkin-version>7.12.1</cucumber-gherkin-version>
+		<cucumber-plugin-version>7.12.1</cucumber-plugin-version>
+		<cucumber-extentsreport-version>3.1.1</cucumber-extentsreport-version>
+		<cucumber-pdf-report-version>2.13.0</cucumber-pdf-report-version>
+		<maven-cucumber-reporting-version>5.7.5</maven-cucumber-reporting-version>
+		<cucumber-expressions-version>16.1.2</cucumber-expressions-version>
+		<cucumber-html-version>0.2.7</cucumber-html-version>
+		<cobertura-version>1.8</cobertura-version>
+		<cucumber-jvm-deps-version>1.0.6</cucumber-jvm-deps-version>
+		<hamcrest-core-version>2.2</hamcrest-core-version>
+		<gherkin-version>26.2.0</gherkin-version>
+		<junit-version>4.13.2</junit-version>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<project.encoding>UTF-8</project.encoding>
+		<project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencies>
+
+		<!-- SELENIUM [4.9.1] DEPENDENCY-->
+
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium-java-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-api</artifactId>
+			<version>${selenium-api-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-driver</artifactId>
+			<version>${selenium-remote-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+			<version>${selenium-chrome-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>${selenium-support-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-firefox-driver</artifactId>
+			<version>${selenium-firefox-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>${selenium-server-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/htmlunit-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>htmlunit-driver</artifactId>
+			<version>${htmlunit-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-htmlunit-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-htmlunit-driver</artifactId>
+			<version>${selenium-htmlunit-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium.client-drivers/selenium-java-client-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium.client-drivers</groupId>
+			<artifactId>selenium-java-client-driver</artifactId>
+			<version>${selenium-java-client-driver-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium.client-drivers/selenium-java-testng-helper -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium.client-drivers</groupId>
+			<artifactId>selenium-java-testng-helper</artifactId>
+			<version>${selenium-java-testng-helper-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-ie-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-ie-driver</artifactId>
+			<version>${selenium-ie-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-safari-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-safari-driver</artifactId>
+			<version>${selenium-safari-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-edge-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-edge-driver</artifactId>
+			<version>${selenium-edge-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-json -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-json</artifactId>
+			<version>${selenium-json-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-opera-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-opera-driver</artifactId>
+			<version>${selenium-opera-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-common -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-common</artifactId>
+			<version>${selenium-common-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-http -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-http</artifactId>
+			<version>${selenium-http-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-control -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-control</artifactId>
+			<version>${selenium-remote-control-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-devtools</artifactId>
+			<version>${selenium-devtools-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-http-jdk-client -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-http-jdk-client</artifactId>
+			<version>${selenium-http-jdk-client-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-grid -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-grid</artifactId>
+			<version>${selenium-grid-version-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chromium-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chromium-driver</artifactId>
+			<version>${selenium-chromium-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium.grid/selenium-grid-core -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium.grid</groupId>
+			<artifactId>selenium-grid-core</artifactId>
+			<version>${selenium-grid-core-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium.grid/selenium-grid-hub -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium.grid</groupId>
+			<artifactId>selenium-grid-hub</artifactId>
+			<version>${selenium-grid-hub-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium.grid/selenium-grid-webserver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium.grid</groupId>
+			<artifactId>selenium-grid-webserver</artifactId>
+			<version>${selenium-grid-webserver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium.grid/selenium-grid-remote-control -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium.grid</groupId>
+			<artifactId>selenium-grid-remote-control</artifactId>
+			<version>${selenium-grid-remote-control-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium.grid/selenium-grid-tools -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium.grid</groupId>
+			<artifactId>selenium-grid-tools</artifactId>
+			<version>${selenium-grid-tools-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium.grid/selenium-grid-demo -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium.grid</groupId>
+			<artifactId>selenium-grid-demo</artifactId>
+			<version>${selenium-grid-demo-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium.grid/selenium-grid-agent -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium.grid</groupId>
+			<artifactId>selenium-grid-agent</artifactId>
+			<version>${selenium-grid-agent-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium.fluent/fluent-selenium -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium.fluent</groupId>
+			<artifactId>fluent-selenium</artifactId>
+			<version>${fluent-selenium-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-manager -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-manager</artifactId>
+			<version>${selenium-manager-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-client -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-client</artifactId>
+			<version>${selenium-remote-client-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium.core/selenium-core -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium.core</groupId>
+			<artifactId>selenium-core</artifactId>
+			<version>${selenium-core-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/lift -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>lift</artifactId>
+			<version>${lift-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-edgehtml-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-edgehtml-driver</artifactId>
+			<version>${selenium-edgehtml-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/htmlunit3-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>htmlunit3-driver</artifactId>
+			<version>${htmlunit3-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-xpi-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-firefox-xpi-driver</artifactId>
+			<version>${selenium-firefox-xpi-driver-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-session-map-redis -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-session-map-redis</artifactId>
+			<version>${selenium-session-map-redis-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-session-map-jdbc -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-session-map-jdbc</artifactId>
+			<version>${selenium-session-map-jdbc-version}</version>
+		</dependency>
+
+		<!-- TESTNG [7.8.0] DEPENDENCY-->
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-testng -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-testng</artifactId>
+			<version>${mockito-testng-version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- CUCUMBER [7.12.1] DEPENDENCY-->
+
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber-java-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber-junit-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-core</artifactId>
+			<version>${cucumber-core-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java8 -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java8</artifactId>
+			<version>${cucumber-java8-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>${cucumber-picocontainer-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>${cucumber-testng-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>cucumber-reporting</artifactId>
+			<version>${cucumber-reporting-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-guice -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-guice</artifactId>
+			<version>${cucumber-guice-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/io.cucumber/cucumber-junit-platform-engine -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit-platform-engine</artifactId>
+			<version>${cucumber-junit-platform-engine-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-gherkin -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-gherkin</artifactId>
+			<version>${cucumber-gherkin-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-plugin -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-plugin</artifactId>
+			<version>${cucumber-plugin-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/com.vimalselvam/cucumber-extentsreport -->
+		<dependency>
+			<groupId>com.vimalselvam</groupId>
+			<artifactId>cucumber-extentsreport</artifactId>
+			<version>${cucumber-extentsreport-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/tech.grasshopper/cucumber-pdf-report -->
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>cucumber-pdf-report</artifactId>
+			<version>${cucumber-pdf-report-version}</version>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>maven-cucumber-reporting</artifactId>
+			<version>${maven-cucumber-reporting-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-expressions -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-expressions</artifactId>
+			<version>${cucumber-expressions-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-html -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-html</artifactId>
+			<version>${cucumber-html-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/cobertura/cobertura -->
+		<dependency>
+			<groupId>cobertura</groupId>
+			<artifactId>cobertura</artifactId>
+			<version>${cobertura-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-jvm-deps</artifactId>
+			<version>${cucumber-jvm-deps-version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-core</artifactId>
+			<version>${hamcrest-core-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>gherkin</artifactId>
+			<version>${gherkin-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok-version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
